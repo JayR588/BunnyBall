@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        PlayerMovement();
+    }
+        void PlayerMovement() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector3 forward = cameraTransform.forward;
@@ -21,5 +24,5 @@ public class Player : MonoBehaviour
         Vector3 direction = forward * moveVertical + right * moveHorizontal;
         rb.AddForce(direction * 5);
     }
-
 }
+
