@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public Transform cameraTransform;
     public GameManager gameManager;
+    public byte speed;
 
     void Update()
     {
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
         forward.Normalize();
         right.Normalize();
         Vector3 direction = forward * moveVertical + right * moveHorizontal;
-        rb.AddForce(direction * 5);
+        rb.AddForce(direction * speed);
     }
 }
 
